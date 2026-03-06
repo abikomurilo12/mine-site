@@ -1,0 +1,406 @@
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biomas do Minecraft</title>
+
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Minecraft", sans-serif;
+            background-image: url("../mineback.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 2px 2px 0px black;
+        }
+
+        /* Container principal */
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        /* Título */
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            color: #55ff55;
+            margin-bottom: 40px;
+        }
+
+        /* Card */
+        .card {
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 4px solid #3c8527;
+            margin-bottom: 25px;
+            padding: 20px;
+            box-shadow: 6px 6px 0px #1b5e20;
+            /* sombra pixelada */
+            transition: 0.15s;
+            background-size: cover;
+    background-position: center;
+            
+        }
+
+        /* Efeito ao passar o mouse */
+        
+        
+
+        /* Nome do bioma */
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+
+        /* Descrição */
+        .card p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .botao-voltar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.botao-voltar a {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border: 4px solid #3c8527;
+    box-shadow: 6px 6px 0px #1b5e20; /* sombra pixel */
+    font-size: 20px;
+    display: inline-block;
+    transition: 0.15s;
+}
+
+.botao-voltar a:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #1b5e20;
+}
+.ancora-nether {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.ancora-nether a {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ff5555;
+    padding: 12px 28px;
+    text-decoration: none;
+    border: 4px solid #aa0000;
+    box-shadow: 6px 6px 0px #550000;
+    font-size: 20px;
+    display: inline-block;
+    transition: 0.15s;
+}
+
+.ancora-nether a:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #550000;
+}
+.nether-card {
+     background-color: rgba(0, 0, 0, 0.9);
+    border: 4px solid #8b0000;       /* borda vermelha escura */
+    box-shadow: 6px 6px 0px #3b0000; /* sombra pixelada */
+    margin-bottom: 25px;
+    padding: 20px;                    /* mesmo padding que os cards normais */
+    transition: 0.15s;
+    background-size: cover;
+    background-position: center 60%;  /* ajusta para mostrar melhor a imagem */
+    background-repeat: no-repeat;
+    
+}
+
+.titulo-card-grande {
+    background-color: rgba(0, 0, 0, 0.85); /* fundo escuro */
+    border: 6px solid #3c8527;             /* borda verde, um pouco mais grossa */
+    box-shadow: 8px 8px 0px #1b5e20;       /* sombra maior que os cards */
+    padding: 40px 0;                        /* mais espaço vertical */
+    margin: 40px auto;                       /* centraliza na tela */
+    width: 90%;                             /* um pouco maior que os cards */
+    text-align: center;                      /* centraliza o texto */
+    border-radius: 4px;                      /* opcional, dá um leve arredondado */
+}
+
+.titulo-card-grande h1 {
+    margin: 0;
+    font-size: 60px;                         /* título bem destacado */
+    color: #55ff55;
+    text-shadow: 3px 3px 0px black;
+}
+
+.nether-titulo {
+    text-align: center;
+    font-size: 36px;
+    color: #ff4444;
+    margin: 60px 0 30px 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 4px solid #8b0000;
+    box-shadow: 6px 6px 0px #3b0000;
+}
+.ancora-the-end {
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.ancora-the-end a {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #aa88ff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border: 4px solid #8844ff;
+    box-shadow: 6px 6px 0px #5522aa;
+    font-size: 20px;
+    display: inline-block;
+    transition: 0.15s;
+}
+
+.ancora-the-end a:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #5522aa;
+}
+.secao-titulo {
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 0 30px 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 4px solid; /* cor definida pelas subclasses */
+    box-shadow: 6px 6px 0px; /* cor definida pelas subclasses */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px; /* opcional, leve arredondado */
+}
+
+/* Cores específicas */
+.overworld-cor {
+    color: #55ff55;          /* texto verde */
+    border-color: #3c8527;   /* borda verde */
+    box-shadow: 6px 6px 0px #1b5e20; /* sombra escura verde */
+}
+
+.nether-cor {
+    color: #ff4444;          /* texto vermelho */
+    border-color: #8b0000;   /* borda vermelha */
+    box-shadow: 6px 6px 0px #3b0000; /* sombra vermelha escura */
+}
+
+.end-cor {
+    color: #aa88ff;          /* texto roxo */
+    border-color: #8844ff;   /* borda roxa */
+    box-shadow: 6px 6px 0px #5522aa; /* sombra roxa escura */
+}
+.ancoras-the-end-final {
+    text-align: center;
+    margin: 40px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espaço entre os botões */
+}
+
+.ancoras-the-end-final a {
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    transition: 0.15s;
+}
+
+/* Estilo Overworld */
+.ancoras-the-end-final a.overworld-cor {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #55ff55;
+    border: 4px solid #3c8527;
+    box-shadow: 6px 6px 0px #1b5e20;
+}
+
+.ancoras-the-end-final a.overworld-cor:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #1b5e20;
+}
+
+/* Estilo Nether */
+.ancoras-the-end-final a.nether-cor {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ff4444;
+    border: 4px solid #8b0000;
+    box-shadow: 6px 6px 0px #3b0000;
+}
+
+.ancoras-the-end-final a.nether-cor:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px #3b0000;
+}
+    </style>
+</head>
+
+<body>
+    
+        <div class="titulo-card-grande">
+    <h1>🌍 Biomas do Minecraft</h1>
+</div>
+<h2 id="overworld-biomas" class="secao-titulo overworld-cor">
+    🌳 Overworld
+</h2>
+
+<div class="container">
+        <div class="card" style="background-image: url('floresta foto.png');">
+    <div class="card-content">
+        <h2>🌳 Forest</h2>
+        <p>Possui muitas árvores e animais.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('floresta escura.png');">
+    <div class="card-content">
+        <h2>🌲 Dark Forest</h2>
+        <p>Floresta densa, árvores altas, cogumelos gigantes e monstros à noite.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('deserto foto.png');">
+    <div class="card-content">
+        <h2>🏜️ Desert</h2>
+        <p>Bioma seco com areia, cactos e templos do deserto.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('taiga\ neve.png');">
+    <div class="card-content">
+        <h2>❄️ Taiga</h2>
+        <p>Região fria com pinheiros, lobos e neve.</p>
+    </div>
+</div>
+
+
+<div class="card" style="background-image: url('oceano normal.png');">
+    <div class="card-content">
+        <h2>🌊 Ocean</h2>
+        <p>Águas profundas, peixes, golfinhos e ruínas submersas.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('deep ocean.png');">
+    <div class="card-content">
+        <h2>🌊 Deep Ocean</h2>
+        <p>Oceanos ainda mais profundos com naufrágios e monumentos oceânicos.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('jungle.png');">
+    <div class="card-content">
+        <h2>🌴 Jungle</h2>
+        <p>Florestas tropicais densas, árvores altas e lianas.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('plains.png');">
+    <div class="card-content">
+        <h2>🌾 Plains</h2>
+        <p>Planícies abertas, muitos animais e vilas.</p>
+    </div>
+</div>
+
+<div class="card" style="background-image: url('swanp.png');">
+    <div class="card-content">
+        <h2>🐸 Swamp</h2>
+        <p>Pântanos com água escura, árvores tortas e slimes à noite.</p>
+    </div>
+</div>
+    
+
+<div class="card" style="background-image: url('mangrove swamp.png');">
+    <div class="card-content">
+        <h2>🌿 Mangrove Swamp</h2>
+        <p>Pântano com árvores de mangue, raízes acima da água e blocos de lama. Lar de sapos e vida aquática, é uma versão mais densa e visualmente distinta do pântano clássico.</p>
+    </div>
+</div>
+
+<div class="nether-card" style="background-image: url('imagens/nether.jpg');">
+    <div class="card-content">
+        <h2>🌋 Nether</h2>
+        <p>Dimensão perigosa cheia de lava e criaturas hostis.</p>
+        <div class="ancora-nether">
+    <a href="#nether-biomas">Ver Biomas do Nether</a>
+</div>
+    </div>
+</div>
+
+<div class="nether-card" style="background-image: url('the-end.png'); border-color: #8844ff; box-shadow: 6px 6px 0px #5522aa;">
+    <div class="card-content">
+        <h2>🌌 The End</h2>
+        <p>Dimensão misteriosa e flutuante, lar dos Endermen e do poderoso Ender Dragon. Com ilhas de obsidiana e pilares de endstone, é um bioma único e desafiador, ideal para aventuras épicas.</p>
+        
+        <!-- Aqui está a âncora -->
+        <div class="ancora-the-end">
+            <a href="#the-end-biomas">Ver Biomas do The End</a>
+        </div>
+    </div>
+</div>
+
+    <h2 id="nether-biomas" class="nether-titulo">🔥 Biomas do Nether</h2>
+<div class="nether-card" style="background-image: url('nether-wastes.png');">
+    <div class="card-content">
+        <h2> Nether Wastes</h2>
+        <p>O bioma mais comum do Nether, composto por netherrack, mares de lava e cavernas abertas. É habitado por criaturas hostis e serve como ponto inicial para exploração da dimensão.</p>
+    </div>
+</div>
+<div class="nether-card" style="background-image: url('crimson-forest.png');">
+    <div class="card-content">
+        <h2> Crimson Forest</h2>
+        <p>Floresta vermelha intensa dominada por fungos gigantes e vegetação carmesim. A atmosfera é densa e perigosa, com diversas criaturas agressivas vagando pela região.</p>
+    </div>
+</div>
+<div class="nether-card" style="background-image: url('warped-forest.png');">
+    <div class="card-content">
+        <h2>Warped Forest</h2>
+        <p>Bioma de tons azulados e aparência misteriosa. Apesar de estar no Nether, é uma das áreas relativamente mais seguras, com menos criaturas hostis.</p>
+    </div>
+</div>
+<div class="nether-card" style="background-image: url('basalt-deltas.png');">
+    <div class="card-content">
+        <h2>Basalt Deltas</h2>
+        <p>Região vulcânica coberta por colunas de basalto e cinzas. O terreno é irregular e perigoso, exigindo cuidado redobrado ao explorar.</p>
+    </div>
+</div>
+<div class="nether-card" style="background-image: url('soul-sand-valley.png');">
+    <div class="card-content">
+        <h2>Soul Sand Valley</h2>
+        <p>Vale sombrio composto por areia das almas e solo das almas. Sons assustadores ecoam pela região, tornando a exploração tensa e desafiadora.</p>
+    </div>
+</div>
+<h2 id="the-end-biomas" class="nether-titulo" style="color: #aa88ff; border-color: #8844ff; box-shadow: 6px 6px 0px #5522aa;">
+    🌌 Biomas do The End
+</h2>
+
+
+
+<div class="nether-card" style="background-image: url('end-city.png'); border-color: #aa88ff; box-shadow: 6px 6px 0px #5522aa;">
+    <div class="card-content">
+        <h2>🏰 End City</h2>
+        <p>Estruturas flutuantes dentro de The End, feitas de purpur blocks e endstone. Contêm loot raro e shulkers, sendo desafiadoras de explorar, mas recompensadoras para aventureiros ousados.</p>
+    </div>
+</div>
+
+<div class="ancoras-the-end-final">
+    <a href="#overworld-biomas" class="overworld-cor">⬅ Voltar para Overworld</a>
+    <a href="#nether-biomas" class="nether-cor">⬅ Voltar para Nether</a>
+</div>
+    <div class="botao-voltar">
+    <a href="../index.html">⬅ Voltar</a>
+    <a href="../imagens-mobs/mobs.html">Conheça os Mobs</a>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft</title>
+    <style>
+        @font-face {
+            font-family: "Minecraftia";
+            src: url("Minecraftia.ttf") format("truetype");
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+
+        body {
+            font-family: "Minecraftia";
+            background-color: #1e1e1e;
+            color: white;
+            background-image: url("mineback.png");
+            background-size: cover;
+            /* cobre a tela toda */
+            background-position: center;
+            /* centraliza */
+            background-repeat: no-repeat;
+            /* não repete */
+            background-attachment: fixed;
+            /* deixa fixa */
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+        }
+
+        a {
+            color: black;
+        }
+
+        .menu-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        /* estilo minecraft */
+        .menu-links a {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 3px solid #555;
+            box-shadow:
+                3px 3px 0 #222;
+            /* sombra quadrada estilo pixel */
+            transition: 0.1s;
+        }
+
+        /* efeito ao passar o mouse */
+        .menu-links a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: translate(2px, 2px);
+            box-shadow:
+                1px 1px 0 #222;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .autores {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 3px solid #3c8527;
+            padding: 8px 16px;
+            font-size: 16px;
+            color: #55ff55;
+            text-shadow: 2px 2px 0px black;
+            box-shadow: 3px 3px 0 #222;
+            white-space: nowrap;
+        }
+        .autores a {
+    color: #55ff55;
+    text-decoration: none;
+}
+.autores a:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Minecraft: Onde a criatividade é o limite.</h1>
+        <div class="autores">
+    ✏️ Por: Kauã &amp; 
+    <a href="https://github.com/abikomurilo12" target="_blank">Murilo</a>
+</div>
+    </div>
+
+    <p>
+        <strong>Minecraft</strong> é um jogo eletrônico criado pela Mojang Studios,
+        onde os jogadores podem explorar, construir e sobreviver em um mundo feito de blocos.
+    </p>
+
+    <h2>Sobre o jogo</h2>
+    <p>
+        Lançado oficialmente em 2011, Minecraft se tornou um dos jogos mais vendidos
+        da história. Ele permite criar construções incríveis e viver aventuras
+        no modo sobrevivência ou criativo.
+    </p>
+    <img src="mines.png" height="400" alt="Imagem do Minecraft">
+    <div class="menu-links">
+        <div class="esquerda">
+            <a href="imagens-biomas/biomas.html">Conheça os Biomas</a>
+            <a href="imagens-mobs/mobs.html">Conheça os Mobs</a>
+        </div>
+
+        <div class="direita">
+            <a href="https://www.minecraft.net/pt-br" target="_blank">
+                Site Oficial
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
